@@ -74,11 +74,11 @@ export default function Home() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="text-xl md:text-2xl text-gray-400 !mb-12 max-w-2xl mx-auto leading-relaxed"
+          className="text-xl md:text-2xl text-gray-400  !mb-12 w-full mx-auto leading-relaxed"
         >
-          Modern dashboard built with{" "}
-          <span className="text-cyan-300 font-semibold">Next.js</span>,{" "}
-          <span className="text-purple-300 font-semibold">TypeScript</span>, and{" "}
+          Modern dashboard built with
+          <span className="text-cyan-300 font-semibold">Next.js</span>,
+          <span className="text-purple-300 font-semibold">TypeScript</span>, and
           <span className="text-pink-300 font-semibold">Tailwind CSS</span>
         </motion.p>
 
