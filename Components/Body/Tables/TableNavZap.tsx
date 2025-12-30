@@ -23,7 +23,7 @@ function TableNavZap({cuscss}:CustomType) {
               />
             </div>
 
-            {/* Divider */}
+          
             <div className="!w-px h-full bg-neutral-700" />
 
 
@@ -45,7 +45,7 @@ function TableNavZap({cuscss}:CustomType) {
             </div>
           </div>
 
-          {/* Slider icon */}
+          
           <button className="text-neutral-300/90 hidden lg:block hover:text-neutral-200 transition-colors">
             <SlidersHorizontal className="!w-4 !h-4" />
           </button>

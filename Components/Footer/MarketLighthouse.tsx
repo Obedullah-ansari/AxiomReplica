@@ -2,7 +2,7 @@ import { BarChart3, Users, Gem, Link } from "lucide-react";
 
 const MarketLighthouse = () => {
   return (
-    <div className="bg-neutral-900/80 rounded-lg !p-4 w-full max-w-md border border-neutral-700">
+    <div className="bg-neutral-900 rounded-lg !p-4 w-full max-w-md border border-neutral-700">
       {/* Header */}
       <div className="flex items-center justify-between !mb-4">
         <div className="flex items-center !gap-2">

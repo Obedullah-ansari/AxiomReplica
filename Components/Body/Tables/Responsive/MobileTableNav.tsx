@@ -24,7 +24,7 @@ export function MobileTableNav({
     <div className="sm:hidden w-full">
       <div className="w-full relative h-[58px] flex items-end items-center border-b border-gray-700/40">
 
-        {/* LEFT ICONS — unchanged */}
+      
         <div className="flex items-end !p-[0.5rem] h-full !gap-[12px]">
           <div className="flex items-center justify-center w-[30px] h-[30px] rounded-full bg-neutral-800">
             <img
@@ -42,10 +42,10 @@ export function MobileTableNav({
           </div>
         </div>
 
-        {/* TABS — SAME UI, SHARED STATE */}
+      
         <TabsNav activeTab={activeTab} setActiveTab={setActiveTab} />
 
-        {/* TOGGLE */}
+      
         <button
           onClick={() => setOpen(!open)}
           className="absolute top-6 right-0 !pr-[12px] !pb-[8px] text-neutral-400 hover:text-white"
@@ -58,7 +58,7 @@ export function MobileTableNav({
         </button>
       </div>
 
-      {/* DROPDOWN — unchanged */}
+      
       {open && (
         <div className="w-full h-[100px] text-neutral-300 flex justify-end flex-col !pb-2 gap-2">
           <DisplayPopover
