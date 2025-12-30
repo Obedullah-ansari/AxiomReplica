@@ -1,9 +1,12 @@
 "use client";
 
+import { useMemo } from "react";
 import { TOKENS } from "@/Components/DB(mock)/token.data";
 import TokenCard from "./TokenCard";
 import TableNav from "./TableNav";
-import { useLiveTokens } from "@/Components/DB(mock)/useLiveTokens"; // Import the hook
+import { useLiveTokens } from "@/Components/DB(mock)/useLiveTokens";
+import { Token } from "@/Components/DB(mock)/token.types";
+import TokenCardSkeleton from "./TokenCardSkeleton";
 
 type Props = {
   heading: string;
@@ -11,9 +14,10 @@ type Props = {
 };
 
 function Table({ heading, category }: Props) {
-
-  const initialData = TOKENS.filter((t) => t.category === category);
-  
+  const initialData: Token[] = useMemo(
+    () => TOKENS.filter((t) => t.category === category),
+    [category]
+  );
 
   const data = useLiveTokens(initialData);
 
@@ -23,10 +27,22 @@ function Table({ heading, category }: Props) {
         <TableNav heading={heading} />
       </div>
 
-      <div className="w-full h-full bg-neutral-800/40 border-r border-gray-800/75">
-        {data.map((token) => (
-          <TokenCard key={token.id} token={token} />
-        ))}
+      <div className="w-full h-full overflow-y-auto bg-neutral-800/40 border-r border-gray-800/75">
+        {data.length === 0 ? (
+          <div className="w-full h-full overflow-y-auto bg-neutral-800/40 border-r border-gray-800/75">
+            {data.length === 0 ? (
+              <>
+                {Array.from({ length: 6 }).map((_, i) => (
+                  <TokenCardSkeleton key={i} />
+                ))}
+              </>
+            ) : (
+              data.map((token) => <TokenCard key={token.id} token={token} />)
+            )}
+          </div>
+        ) : (
+          data.map((token) => <TokenCard key={token.id} token={token} />)
+        )}
       </div>
     </div>
   );

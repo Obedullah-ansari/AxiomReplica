@@ -19,7 +19,7 @@ export default function Tabsbutton({
   const setActiveTab = controlledSetTab ?? setInternalTab;
 
   return (
-    <div className="relative flex !gap-[30px] !p-2 h-full items-end">
+    <div className=" relative flex !gap-[30px] !p-2 h-full items-end">
 
   
       <div

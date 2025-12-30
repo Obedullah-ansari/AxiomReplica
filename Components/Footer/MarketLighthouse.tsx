@@ -3,7 +3,7 @@ import { BarChart3, Users, Gem, Link } from "lucide-react";
 const MarketLighthouse = () => {
   return (
     <div className="bg-neutral-900 rounded-lg !p-4 w-full max-w-md border border-neutral-700">
-      {/* Header */}
+  
       <div className="flex items-center justify-between !mb-4">
         <div className="flex items-center !gap-2">
           <div className="w-2.5 h-2.5 rounded-full bg-green-500" />
@@ -17,7 +17,7 @@ const MarketLighthouse = () => {
         </div>
       </div>
 
-      {/* Stats Row */}
+
       <div className="grid grid-cols-2 !gap-3 !mb-4">
         <div className="bg-neutral-800/70 rounded-lg !p-3">
           <div className="text-neutral-400 text-xs !mb-1">Total Trades</div>
@@ -41,7 +41,7 @@ const MarketLighthouse = () => {
         </div>
       </div>
 
-      {/* 24h Vol Section */}
+
       <div className="!mb-4">
         <div className="flex items-center justify-between !mb-2">
           <span className="text-neutral-400 text-sm">24h Vol</span>
@@ -60,7 +60,7 @@ const MarketLighthouse = () => {
         </div>
       </div>
 
-      {/* Token Stats */}
+
       <div className="!mb-4">
         <div className="flex items-center !gap-2 !mb-3">
           <Gem className="w-4 h-4 text-neutral-400" />
@@ -90,7 +90,7 @@ const MarketLighthouse = () => {
         </div>
       </div>
 
-      {/* Top Launchpads */}
+
       <div className="!mb-4">
         <div className="text-neutral-400 text-sm !mb-3">Top Launchpads</div>
         <div className="grid grid-cols-3 !gap-2">
@@ -124,7 +124,7 @@ const MarketLighthouse = () => {
         </div>
       </div>
 
-      {/* Top Protocols */}
+      
       <div>
         <div className="text-neutral-400 text-sm !mb-3">Top Protocols</div>
         <div className="grid grid-cols-3 !gap-2">

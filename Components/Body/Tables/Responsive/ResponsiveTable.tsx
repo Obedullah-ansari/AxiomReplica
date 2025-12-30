@@ -7,6 +7,7 @@ import Tabsbutton from "./Tabsbutton";
 import { TOKENS } from "@/Components/DB(mock)/token.data";
 import TokenCard from "@/Components/Body/Tables/TokenCard";
 import { useLiveTokens } from "@/Components/DB(mock)/useLiveTokens";
+import TokenCardSkeleton from "../TokenCardSkeleton";
 
 type Tab = "new" | "final" | "migrated";
 
@@ -34,7 +35,7 @@ export default function ResponsiveTable() {
 
   return (
     <div className="w-full h-full flex flex-col overflow-hidden">
-      <div className="relative hidden sm:flex h-[48px] items-center border-b border-gray-700/40">
+      <div className="relative hidden bg-neutral-800/40 sm:flex h-[48px] items-center border-b border-gray-700/40">
         <Tabsbutton activeTab={activeTab} setActiveTab={setActiveTab} />
         <div className="!ml-auto !pr-[12px] pb-[8px]">
           <SlidersHorizontal className="w-4 h-4 text-neutral-400" />
@@ -45,8 +46,16 @@ export default function ResponsiveTable() {
 
       <div className="flex-1 overflow-y-auto bg-neutral-900/70">
         {data.length === 0 ? (
-          <div className="flex items-center justify-center h-full">
-            <p className="text-gray-500">No tokens found</p>
+            <div className="w-full h-full overflow-y-auto bg-neutral-800/40 border-r border-gray-800/75">
+            {data.length === 0 ? (
+              <>
+                {Array.from({ length: 6 }).map((_, i) => (
+                  <TokenCardSkeleton key={i} />
+                ))}
+              </>
+            ) : (
+              data.map((token) => <TokenCard key={token.id} token={token} />)
+            )}
           </div>
         ) : (
           data.map((token) => <TokenCard key={token.id} token={token} />)

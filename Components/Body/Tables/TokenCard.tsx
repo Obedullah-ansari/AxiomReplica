@@ -12,6 +12,7 @@ import {
   Lock,
 } from "lucide-react";
 import { Token } from "@/Components/DB(mock)/token.types";
+import Image from "next/image";
 
 /* ---------- COLOR MAPS ---------- */
 
@@ -49,7 +50,6 @@ interface TokenCardProps {
 }
 
 const TokenCard = ({ token }: TokenCardProps) => {
-
   return (
     <div className="h-[142px]  !px-3 !py-2 flex flex-col justify-between border-b border-gray-700/40 ">
       {/* TOP */}
@@ -61,9 +61,12 @@ const TokenCard = ({ token }: TokenCardProps) => {
               trendBorder[token.borderTrend]
             } transition-all`}
           >
-            <img
+            <Image
               src={token.imageUrl}
               alt={token.name}
+              width={72}
+              height={72}
+              priority={false}
               className="w-full h-full object-cover rounded-md"
             />
           </div>
