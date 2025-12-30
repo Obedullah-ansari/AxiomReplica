@@ -15,11 +15,11 @@ import {
 
 import TextIconButton from "./TextIconButton.tsx";
 import IconButton from "./IconButton";
-import MarketLighthouse from "./MarketLighthouse.tsx";
-import AppToolTip from "./ AppToolTip.tsx";
-import ActiveWallet from "./ActiveWallet.tsx";
-import PresentBtn from "./PresentBtn.tsx";
-import ResponsiveFooter from "./ResponsiveFooter.tsx";
+import MarketLighthouse from "./MarketLighthouse";
+import AppToolTip from "./ AppToolTip";
+import ActiveWallet from "./ActiveWallet";
+import PresentBtn from "./PresentBtn";
+import ResponsiveFooter from "./ResponsiveFooter";
 const Footer = () => {
   return (
     <>
