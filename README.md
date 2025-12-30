@@ -1,36 +1,125 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+🚀 Real-Time Token Dashboard (UI Challenge)
 
-## Getting Started
+A pixel-accurate, responsive token dashboard inspired by modern crypto analytics platforms.
+Built with Next.js + TypeScript, featuring real-time price simulations, smooth color transitions, and multiple interaction patterns.
 
-First, run the development server:
+⏱ Built to match a senior-level UI task (3–4 hrs benchmark) with emphasis on architecture, reusability, and UX polish.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+🌐 Live Demo
+
+🔗 Vercel Deployment
+👉 https://axiom-replica-vert.vercel.app/
+
+🎥 1–2 min Demo Video (YouTube)
+👉 https://youtu.be/SyVY4hTW1qU?si=vKBhOZspfrK1Jf-3
+
+✨ Key Features
+📊 Token Tables
+
+1.>New Pairs
+
+2.>Final Stretch
+
+3.>Migrated
+
+Shared, reusable TokenCard component
+
+Category based filtering (no duplicated UI)
+
+⚡ Real-Time Price Updates (WebSocket-like Mock)
+
+setInterval-based simulation
+
+Randomized price movement
+
+Smooth color transitions:
+
+🟢 Green → price up
+
+🔴 Red → price down
+
+🔵 Neutral → stable
+
+```ts
+useEffect(() => {
+  const id = setInterval(() => {
+    setData(prev =>
+      prev.map(token => ({
+        ...token,
+        priceChange: +(Math.random() * 4 - 2).toFixed(2),
+      }))
+    );
+  }, 400);
+
+  return () => clearInterval(id);
+}, []);
 ```
+Advanced UI Interactions
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Hover states
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Click actions
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Popovers
 
-## Learn More
+Tooltips
 
-To learn more about Next.js, take a look at the following resources:
+Modal-ready structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Animated price + border color transitions
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+📱 Fully Responsive (down to 320px)
 
-## Deploy on Vercel
+Desktop: 3-column table layout
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Mobile: tab-based responsive table
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Auto-layout friendly
+
+No horizontal scroll
+
+Device	Status
+Desktop	✅
+
+<img width="1440" height="814" alt="Screenshot 2025-12-30 at 2 42 56 PM" src="https://github.com/user-attachments/assets/d241b725-87c8-4d05-8337-04a3f7d88000" />
+
+Tablet	✅
+
+<img width="1016" height="814" alt="Screenshot 2025-12-30 at 2 43 18 PM" src="https://github.com/user-attachments/assets/26d9416e-9cb0-40cd-919c-befa2117d8ea" />
+
+
+Mobile (320px)✅
+
+<img width="432" height="814" alt="Screenshot 2025-12-30 at 2 43 32 PM" src="https://github.com/user-attachments/assets/559756d8-0d73-46eb-aa03-e00899c00526" />
+
+*Loading & UX States
+
+->Skeleton loading ready
+->Progressive data updates
+->Error-safe rendering
+->Hydration mismatch avoided using useEffect
+
+🛠 Tech Stack
+
+Next.js (App Router)
+
+TypeScript
+
+Tailwind CSS
+
+Lucide Icons
+
+Vercel
+
+🧩 Design Goals Achieved
+
+✅ Pixel match (≤ 2px deviation)
+
+✅ Reusable architecture
+
+✅ Clean commit history
+
+✅ Senior-level UI polish
+
+✅ Real-time interaction feel
+
